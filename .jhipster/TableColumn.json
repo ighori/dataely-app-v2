@@ -1,0 +1,61 @@
+{
+  "name": "TableColumn",
+  "fields": [
+    {
+      "fieldName": "columnName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "columnType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "columnSize",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "isNullable",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isPrimaryKey",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isForeignKey",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isIndexed",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tablesDefinition",
+      "otherEntityRelationshipName": "tableColumn",
+      "relationshipName": "tablesDefinition",
+      "otherEntityField": "tableName"
+    }
+  ],
+  "entityTableName": "table_column",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135820"
+}

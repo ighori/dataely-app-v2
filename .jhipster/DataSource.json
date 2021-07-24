@@ -1,0 +1,131 @@
+{
+  "name": "DataSource",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "detail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "databaseName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "instanceName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "schemaName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hostname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "port",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "username",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "icon",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dbType",
+      "fieldType": "EDbType",
+      "fieldValues": "ORACLE,MYSQL,SQLSERVER,POSTGRESQL,DERBY,FIREBIRDDB,DB2,SYBASE,TERADATA,HIVE2",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dbVersion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "schemaCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dsType",
+      "fieldType": "EdsType",
+      "fieldValues": "JDBC,JSON,XML,CSV,PARQUET,FIXED,EBCDIC,NOSQL,ARVO,QMS,XLS,XLSX",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "driverClassName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jdbcUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sid",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "environment",
+      "otherEntityRelationshipName": "dataSource",
+      "relationshipName": "environment",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "dsSchema",
+      "otherEntityRelationshipName": "dataSource",
+      "relationshipName": "dsSchema",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "analyzerJob",
+      "otherEntityRelationshipName": "dataSource",
+      "relationshipName": "analyzerJob",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "analyzerResult",
+      "otherEntityRelationshipName": "dataSource",
+      "relationshipName": "analyzerResult",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "data_source",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135816"
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity FileField.
+    -->
+    <changeSet id="20210724135827-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="file_info_id"
+                                 baseTableName="file_field"
+                                 constraintName="fk_file_field__file_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="file_info"/>
+    </changeSet>
+</databaseChangeLog>

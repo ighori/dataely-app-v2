@@ -29,6 +29,94 @@
             <font-awesome-icon icon="th-list" />
             <span class="no-bold">Entities</span>
           </span>
+          <b-dropdown-item to="/organization">
+            <font-awesome-icon icon="asterisk" />
+            <span>Organization</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/business-unit">
+            <font-awesome-icon icon="asterisk" />
+            <span>Business Unit</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/application">
+            <font-awesome-icon icon="asterisk" />
+            <span>Application</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/contact">
+            <font-awesome-icon icon="asterisk" />
+            <span>Contact</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/environment">
+            <font-awesome-icon icon="asterisk" />
+            <span>Environment</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/data-source">
+            <font-awesome-icon icon="asterisk" />
+            <span>Data Source</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/ds-schema">
+            <font-awesome-icon icon="asterisk" />
+            <span>Ds Schema</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/ds-schema-relationship">
+            <font-awesome-icon icon="asterisk" />
+            <span>Ds Schema Relationship</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/tables-definition">
+            <font-awesome-icon icon="asterisk" />
+            <span>Tables Definition</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/table-column">
+            <font-awesome-icon icon="asterisk" />
+            <span>Table Column</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/table-relationship">
+            <font-awesome-icon icon="asterisk" />
+            <span>Table Relationship</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/related-table">
+            <font-awesome-icon icon="asterisk" />
+            <span>Related Table</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/related-table-column">
+            <font-awesome-icon icon="asterisk" />
+            <span>Related Table Column</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/file-source">
+            <font-awesome-icon icon="asterisk" />
+            <span>File Source</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/file-config">
+            <font-awesome-icon icon="asterisk" />
+            <span>File Config</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/file-info">
+            <font-awesome-icon icon="asterisk" />
+            <span>File Info</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/file-field">
+            <font-awesome-icon icon="asterisk" />
+            <span>File Field</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/analyzer-entities">
+            <font-awesome-icon icon="asterisk" />
+            <span>Analyzer Entities</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/analyzer-recognizers">
+            <font-awesome-icon icon="asterisk" />
+            <span>Analyzer Recognizers</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/analyzer-ad-hoc-recognizers">
+            <font-awesome-icon icon="asterisk" />
+            <span>Analyzer Ad Hoc Recognizers</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/analyzer-result">
+            <font-awesome-icon icon="asterisk" />
+            <span>Analyzer Result</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/analyzer-job">
+            <font-awesome-icon icon="asterisk" />
+            <span>Analyzer Job</span>
+          </b-dropdown-item>
           <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
         </b-nav-item-dropdown>
         <b-nav-item-dropdown

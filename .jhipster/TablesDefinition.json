@@ -1,0 +1,87 @@
+{
+  "name": "TablesDefinition",
+  "fields": [
+    {
+      "fieldName": "tableName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "symbolSize",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "colCnt",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "colCntNbr",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "colCntTB",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "colCntSTR",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "colCntBL",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "colCntPK",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "colCntFK",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "colCntIX",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "dsSchema",
+      "otherEntityRelationshipName": "tablesDefinition",
+      "relationshipName": "dsSchema",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tableColumn",
+      "otherEntityRelationshipName": "tablesDefinition",
+      "relationshipName": "tableColumn"
+    }
+  ],
+  "entityTableName": "tables_definition",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135819"
+}

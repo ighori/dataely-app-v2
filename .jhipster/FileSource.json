@@ -1,0 +1,115 @@
+{
+  "name": "FileSource",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "detail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hostname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "port",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "username",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "icon",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "connectionType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "EdsType",
+      "fieldValues": "JDBC,JSON,XML,CSV,PARQUET,FIXED,EBCDIC,NOSQL,ARVO,QMS,XLS,XLSX"
+    },
+    {
+      "fieldName": "region",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ignoreDottedFiles",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "recurse",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "pathFilterRegex",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "remotePath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "environment",
+      "otherEntityRelationshipName": "fileSource",
+      "relationshipName": "environment",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "fileInfo",
+      "otherEntityRelationshipName": "fileSource",
+      "relationshipName": "fileInfo",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "analyzerJob",
+      "otherEntityRelationshipName": "fileSource",
+      "relationshipName": "analyzerJob",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "analyzerResult",
+      "otherEntityRelationshipName": "fileSource",
+      "relationshipName": "analyzerResult",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "file_source",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135824"
+}

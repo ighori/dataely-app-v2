@@ -1,0 +1,65 @@
+{
+  "name": "AnalyzerAdHocRecognizers",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "detail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "recognizerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "supportedLang",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "patternName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regex",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "score",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "context",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "denyList",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "supportedEntity",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "analyzer_ad_hoc_recognizers",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135830"
+}

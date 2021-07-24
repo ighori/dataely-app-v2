@@ -1,0 +1,45 @@
+{
+  "name": "FileField",
+  "fields": [
+    {
+      "fieldName": "fieldName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fieldType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fieldSize",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fileInfo",
+      "otherEntityRelationshipName": "fileField",
+      "relationshipName": "fileInfo",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "file_field",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135827"
+}

@@ -1,0 +1,25 @@
+export enum EContactType {
+  OWNER = 'OWNER',
+
+  ADMINISTRATOR = 'ADMINISTRATOR',
+
+  SME = 'SME',
+
+  REVIEWER = 'REVIEWER',
+
+  APPROVER = 'APPROVER',
+
+  ARCHITECT = 'ARCHITECT',
+
+  ENGINEER = 'ENGINEER',
+
+  DBA = 'DBA',
+
+  MANAGER = 'MANAGER',
+
+  DEVELOPER = 'DEVELOPER',
+
+  TESTER = 'TESTER',
+
+  ANALYST = 'ANALYST',
+}

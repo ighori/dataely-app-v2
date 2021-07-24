@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity AnalyzerJob.
+    -->
+    <changeSet id="20210724135832-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="environment_id"
+                                 baseTableName="analyzer_job"
+                                 constraintName="fk_analyzer_job__environment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="environment"/>
+
+        <addForeignKeyConstraint baseColumnNames="data_source_id"
+                                 baseTableName="analyzer_job"
+                                 constraintName="fk_analyzer_job__data_source_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="data_source"/>
+
+        <addForeignKeyConstraint baseColumnNames="file_source_id"
+                                 baseTableName="analyzer_job"
+                                 constraintName="fk_analyzer_job__file_source_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="file_source"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="analyzer_job"
+                                 constraintName="fk_analyzer_job__user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+    </changeSet>
+</databaseChangeLog>

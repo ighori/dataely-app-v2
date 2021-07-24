@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity AnalyzerResult.
+    -->
+    <changeSet id="20210724135831-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="data_source_id"
+                                 baseTableName="analyzer_result"
+                                 constraintName="fk_analyzer_result__data_source_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="data_source"/>
+
+        <addForeignKeyConstraint baseColumnNames="file_source_id"
+                                 baseTableName="analyzer_result"
+                                 constraintName="fk_analyzer_result__file_source_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="file_source"/>
+    </changeSet>
+</databaseChangeLog>
