@@ -1,0 +1,37 @@
+{
+  "name": "AnalyzerEntities",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "detail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "entityName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "analyzer_entities",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135828"
+}

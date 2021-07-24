@@ -1,0 +1,103 @@
+{
+  "name": "FileInfo",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "detail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fileType",
+      "fieldType": "EdsType",
+      "fieldValues": "JDBC,JSON,XML,CSV,PARQUET,FIXED,EBCDIC,NOSQL,ARVO,QMS,XLS,XLSX",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "filePath",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "columnNameLineNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "encoding",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "separatorChar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quoteChar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "escapeChar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fixedValueWidth",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "skipEmptyLines",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "skipEmptyColumns",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "failOnInconsistentLineWidth",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "skipEbcdicHeader",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "eolPresent",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fileSource",
+      "otherEntityRelationshipName": "fileInfo",
+      "relationshipName": "fileSource",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fileConfig",
+      "otherEntityRelationshipName": "fileInfo",
+      "relationshipName": "fileConfig",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "file_info",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135826"
+}

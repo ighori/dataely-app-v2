@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity TablesDefinition.
+    -->
+    <changeSet id="20210724135819-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ds_schema_id"
+                                 baseTableName="tables_definition"
+                                 constraintName="fk_tables_definition__ds_schema_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ds_schema"/>
+    </changeSet>
+</databaseChangeLog>

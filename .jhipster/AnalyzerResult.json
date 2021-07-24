@@ -1,0 +1,109 @@
+{
+  "name": "AnalyzerResult",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "detail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "objectId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "objectType",
+      "fieldType": "EAnalyzerObjectType",
+      "fieldValues": "FILE,TABLE"
+    },
+    {
+      "fieldName": "fieldId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "fieldType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "entityType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "start",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "end",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "score",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "recognizer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "patternName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "patternExpr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "originalScore",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "textualExplanation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "supportiveContextWord",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "validationResult",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "dataSource",
+      "otherEntityRelationshipName": "analyzerResult",
+      "relationshipName": "dataSource",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fileSource",
+      "otherEntityRelationshipName": "analyzerResult",
+      "relationshipName": "fileSource",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "analyzer_result",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135831"
+}

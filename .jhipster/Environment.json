@@ -1,0 +1,81 @@
+{
+  "name": "Environment",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "detail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "EEnvType",
+      "fieldValues": "STANDALONE,INTEGRATED,DEVELOPMENT,TESTING,TRAINING,STAGING,PRODUCTION,OTHER",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "purpose",
+      "fieldType": "EEnvPurpose",
+      "fieldValues": "PROFILING,MASKING,REPORTING",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "contact",
+      "otherEntityRelationshipName": "environment",
+      "relationshipName": "contact",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "application",
+      "otherEntityRelationshipName": "environment",
+      "relationshipName": "application",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "dataSource",
+      "otherEntityRelationshipName": "environment",
+      "relationshipName": "dataSource",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "fileSource",
+      "otherEntityRelationshipName": "environment",
+      "relationshipName": "fileSource",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "analyzerJob",
+      "otherEntityRelationshipName": "environment",
+      "relationshipName": "analyzerJob",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "environment",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135815"
+}

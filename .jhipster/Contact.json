@@ -1,0 +1,88 @@
+{
+  "name": "Contact",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "role",
+      "fieldType": "EContactType",
+      "fieldValues": "OWNER,ADMINISTRATOR,SME,REVIEWER,APPROVER,ARCHITECT,ENGINEER,DBA,MANAGER,DEVELOPER,TESTER,ANALYST",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "pattern"],
+      "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extension",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mobile",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressLine1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressLine2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "environment",
+      "otherEntityRelationshipName": "contact",
+      "relationshipName": "environment",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "contact",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135814"
+}

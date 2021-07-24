@@ -1,0 +1,58 @@
+{
+  "name": "Application",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "detail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "appType",
+      "fieldType": "EAppType",
+      "fieldValues": "CRM,HR,FINANCE,COMMUNICATION,MESSAGING,MARKETING,WEB,MOBILE,SERVICE,DMS,HELPDESK,ACCOUNTING,ERP,ANALYTICS,BI,OTHER",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "environment",
+      "otherEntityRelationshipName": "application",
+      "relationshipName": "environment",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "businessUnit",
+      "otherEntityRelationshipName": "application",
+      "relationshipName": "businessUnit",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "application",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135813"
+}

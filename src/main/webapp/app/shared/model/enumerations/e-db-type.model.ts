@@ -1,0 +1,21 @@
+export enum EDbType {
+  ORACLE = 'ORACLE',
+
+  MYSQL = 'MYSQL',
+
+  SQLSERVER = 'SQLSERVER',
+
+  POSTGRESQL = 'POSTGRESQL',
+
+  DERBY = 'DERBY',
+
+  FIREBIRDDB = 'FIREBIRDDB',
+
+  DB2 = 'DB2',
+
+  SYBASE = 'SYBASE',
+
+  TERADATA = 'TERADATA',
+
+  HIVE2 = 'HIVE2',
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity FileInfo.
+    -->
+    <changeSet id="20210724135826-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="file_source_id"
+                                 baseTableName="file_info"
+                                 constraintName="fk_file_info__file_source_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="file_source"/>
+
+        <addForeignKeyConstraint baseColumnNames="file_config_id"
+                                 baseTableName="file_info"
+                                 constraintName="fk_file_info__file_config_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="file_config"/>
+    </changeSet>
+</databaseChangeLog>

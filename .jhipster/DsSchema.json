@@ -1,0 +1,61 @@
+{
+  "name": "DsSchema",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "detail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tableCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tableRelCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "dataSource",
+      "otherEntityRelationshipName": "dsSchema",
+      "relationshipName": "dataSource",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "dsSchemaRelationship",
+      "otherEntityRelationshipName": "dsSchema",
+      "relationshipName": "dsSchemaRelationship"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tablesDefinition",
+      "otherEntityRelationshipName": "dsSchema",
+      "relationshipName": "tablesDefinition"
+    }
+  ],
+  "entityTableName": "ds_schema",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135817"
+}

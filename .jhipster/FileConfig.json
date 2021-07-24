@@ -1,0 +1,89 @@
+{
+  "name": "FileConfig",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "detail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "columnNameLineNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "encoding",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "separatorChar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quoteChar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "escapeChar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fixedValueWidth",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "skipEmptyLines",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "skipEmptyColumns",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "failOnInconsistentLineWidth",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "skipEbcdicHeader",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "eolPresent",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "fileType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "fileInfo",
+      "otherEntityRelationshipName": "fileConfig",
+      "relationshipName": "fileInfo",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "file_config",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135825"
+}

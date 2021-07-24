@@ -1,0 +1,41 @@
+{
+  "name": "RelatedTableColumn",
+  "fields": [
+    {
+      "fieldName": "columnName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "columnType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "relatedTable",
+      "otherEntityRelationshipName": "relatedTableColumn",
+      "relationshipName": "relatedTable",
+      "otherEntityField": "tableName"
+    }
+  ],
+  "entityTableName": "related_table_column",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210724135823"
+}
