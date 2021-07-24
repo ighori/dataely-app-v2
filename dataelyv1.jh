@@ -1,0 +1,407 @@
+/* Entities for Dataely Gateway */
+
+entity Organization {
+    name String required
+    detail String
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity BusinessUnit {
+    name String required
+    detail String
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity Application {
+    name String required
+    detail String
+    version String
+    appType EAppType required
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity Contact {
+    firstName String required
+    lastName String required
+    name String required
+    role EContactType required
+    email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+    Phone String
+    extension String
+    Mobile String
+    location String
+    addressLine1 String 
+    addressLine2 String
+    city String 
+    country String
+    image ImageBlob
+}
+
+entity Environment {
+    name String required
+    detail String
+    type EEnvType required
+    purpose EEnvPurpose required
+    creationDate Instant
+    lastUpdated Instant
+    
+}
+
+entity DataSource {
+	name String required
+	detail String
+	databaseName String required
+	instanceName String 
+	schemaName String
+	hostname String required
+	Port Integer required
+	username String required
+	password String required
+	icon String 
+	dbType EDbType required
+	dbVersion String 
+	schemaCount Integer 
+	dsType EdsType required
+	driverClassName String
+	jdbcUrl String 
+	sid String
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity DsSchema {
+	name String required
+	detail String
+    tableCount Integer 
+    tableRelCount Integer
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity DsSchemaRelationship {
+    source String
+    target String
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity TablesDefinition {
+	tableName String required
+    value Integer 
+    symbolSize Integer 
+    category Integer 
+    colCnt Integer 
+    colCntNbr Integer 
+    colCntTB Integer 
+    colCntSTR Integer 
+    colCntBL Integer 
+    colCntPK Integer 
+    colCntFK Integer
+    colCntIX Integer
+    creationDate Instant
+    lastUpdated Instant  
+}
+
+entity TableColumn {
+	columnName String required
+    columnType String
+    columnSize Long 
+    isNullable Boolean 
+    isPrimaryKey Boolean 
+    isForeignKey Boolean 
+    isIndexed Boolean 
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity TableRelationship {
+    source String 
+    target String 
+    sourceKey String 
+    targetKey String
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity RelatedTable {
+	tableName String required
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity RelatedTableColumn {
+	columnName String required
+    columnType String
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity FileSource {
+	name String required
+	detail String
+	hostname String required
+	Port Integer required
+	username String required
+	password String required
+	icon String 
+	connectionType String 
+	type EdsType 
+	region String 
+	ignoreDottedFiles Boolean 
+	recurse Boolean
+	pathFilterRegex String
+	remotePath String 
+    creationDate Instant
+    lastUpdated Instant    
+}
+
+entity FileConfig {
+	name String required
+	detail String
+    columnNameLineNumber Integer 
+    encoding String 
+    separatorChar String 
+    quoteChar String 
+    escapeChar String 
+    fixedValueWidth Integer 
+    skipEmptyLines Boolean 
+    skipEmptyColumns Boolean 
+    failOnInconsistentLineWidth Boolean 
+    skipEbcdicHeader Boolean 
+    eolPresent Boolean 
+    fileType String 
+    creationDate Instant
+    lastUpdated Instant    
+}
+
+entity FileInfo {
+	name String required
+	detail String
+    fileType EdsType required
+    filePath String required
+    columnNameLineNumber Integer 
+    encoding String 
+    separatorChar String 
+    quoteChar String 
+    escapeChar String 
+    fixedValueWidth Integer 
+    skipEmptyLines Boolean 
+    skipEmptyColumns Boolean 
+    failOnInconsistentLineWidth Boolean 
+    skipEbcdicHeader Boolean 
+    eolPresent Boolean 
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity FileField {
+	fieldName String required
+    fieldType String
+    fieldSize Long 
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity AnalyzerEntities {
+	name String required
+	detail String
+    entityName String
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity AnalyzerRecognizers {
+	name String required
+	detail String
+    recognizerName String
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity AnalyzerAdHocRecognizers {
+	name String required
+	detail String
+    recognizerName String
+    supportedLang String
+    patternName String
+    regex String
+    score Float
+    context String
+    denyList String
+    supportedEntity String
+    creationDate Instant
+    lastUpdated Instant
+}
+
+entity AnalyzerResult {
+	name String required
+	detail String
+    objectId Integer
+    objectType EAnalyzerObjectType
+    fieldId Integer
+    fieldType String
+    entityType String
+    start Integer
+    end Integer
+    score Float
+    recognizer String
+    patternName String
+    patternExpr String
+    originalScore String
+    textualExplanation String
+    supportiveContextWord String
+    validationResult String
+    creationDate Instant
+    lastUpdated Instant
+} 
+
+entity AnalyzerJob {
+	name String required
+	detail String
+  	endTime Instant 
+    startTime Instant
+  	status EJobStatus
+    previousRunTime String
+    creationDate Instant
+    lastUpdated Instant
+}
+
+
+enum EEnvPurpose {
+  PROFILING, MASKING, REPORTING
+}
+
+enum EEnvType {
+  STANDALONE,
+  INTEGRATED,
+  DEVELOPMENT,
+  TESTING,
+  TRAINING,
+  STAGING,
+  PRODUCTION,
+  OTHER
+}
+
+enum EAppType {
+  CRM,
+  HR,
+  FINANCE,
+  COMMUNICATION,
+  MESSAGING,
+  MARKETING,
+  WEB,
+  MOBILE,
+  SERVICE,
+  DMS,
+  HELPDESK,
+  ACCOUNTING,
+  ERP,
+  ANALYTICS,
+  BI,
+  OTHER
+}
+
+enum EConnectionStatus {
+    SUCCEEDED("Connection Succeeded"),
+    FAILED("Connection Failed")
+}
+
+enum EJobStatus {
+    SUCCEEDED("Job Succeeded"),
+    FAILED("Job Failed")
+}
+
+enum EdsType {
+  JDBC,
+  JSON,
+  XML,
+  CSV,
+  PARQUET,
+  FIXED,
+  EBCDIC,
+  NOSQL,
+  ARVO,
+  QMS,
+  XLS,
+  XLSX
+}
+
+enum EDbType {
+ORACLE,
+MYSQL,
+SQLSERVER,
+POSTGRESQL,
+DERBY,
+FIREBIRDDB,
+DB2,
+SYBASE,
+TERADATA,
+HIVE2
+
+}
+
+enum EFileConnectionMode {
+  S3,
+  FTP,
+  SFTP
+}
+
+enum EAnalyzerObjectType {
+  FILE,
+  TABLE
+}
+
+enum EContactType {
+  OWNER,
+  ADMINISTRATOR,
+  SME,
+  REVIEWER,
+  APPROVER,
+  ARCHITECT,
+  ENGINEER,
+  DBA,
+  MANAGER,
+  DEVELOPER,
+  TESTER,
+  ANALYST
+}
+
+relationship OneToOne {
+    Organization{user(login) required} to User
+}
+
+relationship OneToMany {  
+   Organization{businessUnit} to BusinessUnit{organization(name)}
+   BusinessUnit{application(name)} to Application{businessUnit(name)}
+   Application{environment(name)} to Environment{application(name)}
+}
+
+relationship ManyToOne {
+   Environment{contact(name)} to Contact{environment(name)}
+   DataSource{environment(name)} to Environment{dataSource(name)}
+   FileSource{environment(name)} to Environment{fileSource(name)}
+   FileInfo{fileSource(name)} to FileSource{fileInfo(name)}
+   FileInfo{fileConfig(name)} to FileConfig{fileInfo(name)}
+   DsSchema{dataSource(name)} to DataSource{dsSchema(name)}
+   DsSchemaRelationship{dsSchema(name)} to DsSchema{dsSchemaRelationship}
+   TablesDefinition{dsSchema(name)} to DsSchema{tablesDefinition}
+   TableColumn{tablesDefinition(tableName)} to TablesDefinition{tableColumn}
+   TableRelationship{tablesDefinition(tableName)} to TablesDefinition
+   RelatedTable{tablesDefinition(tableName)} to TablesDefinition
+   RelatedTableColumn{relatedTable(tableName)} to RelatedTable
+   FileField{fileInfo(name)} to FileInfo
+   AnalyzerJob{environment(name)} to Environment{analyzerJob(name)}
+   AnalyzerJob{dataSource(name)} to DataSource{analyzerJob(name)}
+   AnalyzerJob{fileSource(name)} to FileSource{analyzerJob(name)}
+   AnalyzerJob{user(login) required} to User
+   AnalyzerResult{dataSource(name)} to DataSource{analyzerResult(name)}
+   AnalyzerResult{fileSource(name)} to FileSource{analyzerResult(name)}
+}
+
+
+service * with serviceImpl
+paginate * with pagination
+dto * with mapstruct
